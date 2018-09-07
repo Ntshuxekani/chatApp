@@ -6,6 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AuthProvider } from '../providers/auth/auth';
+import { ChatRoomsProvider } from '../providers/chat-rooms/chat-rooms';
+import { ProfileProvider } from '../providers/profile/profile';
+import { ChatProvider } from '../providers/chat/chat';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider,
+    ChatRoomsProvider,
+    ProfileProvider,
+    ChatProvider
   ]
 })
 export class AppModule {}

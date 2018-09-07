@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar  color="primary">
+    <ion-title>Rooms</ion-title>
+    <ion-buttons end >
+      <button ion-button icon-only (click)="createRoom()">
+        <ion-icon name="add"></ion-icon>
+        </button>
+          <button ion-button icon-only (click)="logout()">
+            <ion-icon name="log-out"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="goToProfile()">
+            <ion-icon name="person"></ion-icon>
+        
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+ 
+ </ion-header>
+ 
+ 
+ <ion-content padding class="img">
+ <ion-list no-lines>
+<ion-item *ngFor="let chatRoom of chatRoomsList" (click)="joinRoom(chatRoom.id)">
+  <h2>{{chatRoom?.name}}</h2>
+  <ion-icon name="chatboxes" item-end></ion-icon>
+</ion-item>
+ </ion-list>
+ </ion-content>
